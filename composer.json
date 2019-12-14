@@ -6,5 +6,7 @@
             "email": "punitha.job@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "php": "^7.2.0"
+    }
 }
