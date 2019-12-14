@@ -1,26 +1,91 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// =============================
+// DEPENDENCIES
+// =============================
+// packages
+import React from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// components
+import Header from './components/Header.js'
+import Navbar from './components/Navbar.js'
+import Main from './components/Main.js'
+
+// =============================
+// COMPONENT CLASS
+// =============================
+class App extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            view: {
+                page: 'home',
+                pageTitle: '...'
+            },
+            formInputs: {
+                habit: null,
+                description: null,
+                comments: null,
+                id: null
+            }
+        }
+    }
+
+    handleView = (view, postData) => {
+        let pageTitle = ''
+        let formInputs = {
+            habit: '',
+            description: '',
+            comments: '',
+            id: null
+        }
+        switch(view) {
+            case 'home':
+                pageTitle="I heard that..."
+                break
+            case 'addPost':
+                pageTitle="What did you say?"
+                break
+            case 'editPost':
+                pageTitle="What did you really say?"
+                formInputs = {
+                    habit: postData.habit,
+                    description: postData.description,
+                    comments: postData.comments,
+                    id: postData.id
+                }
+                break
+            default:
+                break
+        }
+        this.setState({
+            view: {
+                page: view,
+                pageTitle: pageTitle
+            },
+            formInputs: formInputs
+        })
+    }
+
+  // ==============
+  // RENDER
+  // ==============
+  render () {
+    return (
+      <div className="large-container">
+        <Header/>
+        <div className="main-container">
+          <Navbar handleView={this.handleView} />
+          <Main
+            view={this.state.view}
+            handleView={this.handleView}
+            formInputs={this.state.formInputs}
+           />
+        </div>
+      </div>
+    )
+  }
 }
 
-export default App;
+// =============================
+// EXPORT
+// =============================
+export default App
