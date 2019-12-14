@@ -6,7 +6,7 @@ class Habit {
   public $title;
   public $description;
   public $daysOfWeek;
-  public $time;
+  public $timing;
   public $completed;
   public $comments;
 
