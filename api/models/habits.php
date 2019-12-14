@@ -72,7 +72,7 @@ class Habits {
       $result = pg_query_params($query, $query_params);
       return self::all();
     }
-    
+
     static function delete($id){
       $query = "DELETE FROM habits WHERE id = $1";
       $query_params = array($id);
