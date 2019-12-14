@@ -1,0 +1,13 @@
+{
+    "name": "arivmanivasagam/api",
+    "authors": [
+        {
+            "name": "punitha86",
+            "email": "punith.job@gmail.com"
+        }
+    ],
+    "require": {},
+    "config": {
+    "vendor-dir": "composer_vendor"
+}
+}
