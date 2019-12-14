@@ -3,11 +3,8 @@
     "authors": [
         {
             "name": "punitha86",
-            "email": "punith.job@gmail.com"
+            "email": "punitha.job@gmail.com"
         }
     ],
-    "require": {},
-    "config": {
-    "vendor-dir": "composer_vendor"
-}
+    "require": {}
 }
