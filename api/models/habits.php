@@ -6,7 +6,7 @@ class Habit {
   public $title;
   public $description;
   public $daysOfWeek;
-  public $time;
+  public $timing;
   public $completed;
   public $comments;
 
@@ -60,6 +60,7 @@ class Habits {
   }
 
   static function update($updated_habit){
+    echo "inside update";
       $query = "UPDATE habits SET title = $1, description = $2, daysOfWeek = $3, timing=$4, completed=$5, comments=$6 WHERE id = $7";
       $query_params = array(
         $updated_habit->title,
@@ -67,7 +68,8 @@ class Habits {
         $updated_habit->daysOfWeek,
         $updated_habit->timing,
         $updated_habit->completed ,
-        $updated_habit->comments
+        $updated_habit->comments,
+        $updated_habit->id
       );
       $result = pg_query_params($query, $query_params);
       return self::all();
