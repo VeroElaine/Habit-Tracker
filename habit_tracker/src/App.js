@@ -5,7 +5,7 @@
 import React from 'react'
 
 // components
-import Header from './components/Header.js'
+import Habit from './components/Habit.js'
 import Navbar from './components/Navbar.js'
 import Main from './components/Main.js'
 
@@ -70,8 +70,7 @@ class App extends React.Component {
   // ==============
   render () {
     return (
-      <div className="large-container">
-        <Header/>
+
         <div className="main-container">
           <Navbar handleView={this.handleView} />
           <Main
@@ -80,7 +79,6 @@ class App extends React.Component {
             formInputs={this.state.formInputs}
            />
         </div>
-      </div>
     )
   }
 }

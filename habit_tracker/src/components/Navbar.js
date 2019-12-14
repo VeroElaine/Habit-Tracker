@@ -13,13 +13,13 @@ class Navbar extends React.Component {
   // ==============
   render () {
     return (
-      <navbar>
+      <Navbar>
         <h1>NAVIGATE</h1>
         <ul>
           <li onClick={() => {this.props.handleView('home')}}>home</li>
           <li onClick={() => {this.props.handleView('addHabit')}}>add habit</li>
         </ul>
-      </navbar>
+      </Navbar>
     )
   }
 }
