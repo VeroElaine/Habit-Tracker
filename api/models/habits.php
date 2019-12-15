@@ -33,10 +33,10 @@ class Habits {
       $new_habit = new Habit(
         intval($row_object->id),
         $row_object->title,
-        $row_object->description ,
-        $row_object->daysOfWeek,
+        $row_object->description,
+        $row_object->daysofweek,
         $row_object->timing ,
-        $row_object->completed ,
+        boolval($row_object->completed) ,
         $row_object->comments
       );
       $habits[] = $new_habit;
