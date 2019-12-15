@@ -15,7 +15,7 @@ let baseUrl = '';
 if (process.env.NODE_ENV === 'development') {
   baseUrl = 'http://localhost:8888'
 } else {
-  console.log('this is for heroku');
+  console.log('https://my-habit-tracker.herokuapp.com/');
 }
 
 class Main extends React.Component {
@@ -102,7 +102,7 @@ class Main extends React.Component {
         <h1>{this.props.view.pageTitle}</h1>
         { this.props.view.page === 'home'
             ? this.state.habits.map((postData) => (
-              <Post
+              <Habit
                key={postData.id}
                postData={postData}
                handleView={this.props.handleView}

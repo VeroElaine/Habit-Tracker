@@ -5,7 +5,7 @@
 import React from 'react'
 
 // components
-import Habit from './components/Habit.js'
+//import Habit from './components/Habit.js'
 import Navbar from './components/Navbar.js'
 import Main from './components/Main.js'
 
@@ -70,14 +70,14 @@ class App extends React.Component {
   // ==============
   render () {
     return (
-
         <div className="main-container">
-          <Navbar handleView={this.handleView} />
-          <Main
-            view={this.state.view}
-            handleView={this.handleView}
-            formInputs={this.state.formInputs}
-           />
+        <h1>HI</h1>
+        <Navbar handleView={this.handleView} />
+        <Main
+          view={this.state.view}
+          handleView={this.handleView}
+          formInputs={this.state.formInputs}
+         />
         </div>
     )
   }

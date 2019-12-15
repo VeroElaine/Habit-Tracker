@@ -34,7 +34,7 @@ class Form extends React.Component {
     e.preventDefault()
     if (this.props.view.page === 'addPost') {
         this.props.handleCreate(this.state)
-    } else if (this.props.view.page = 'editPost') {
+    } else if (this.props.view.page === 'editPost') {
         this.props.handleUpdate(this.state)
     }
 }
